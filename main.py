@@ -11,16 +11,25 @@ def is_sorted(list: list[int]) -> bool:
 
 
 def sort(list: list[int]) -> None:
+    initial = True
     sorted = False
-    tries = 1
+    tries = 0
     while sorted != True:
         sorted = is_sorted(list)
         if not sorted:
-            print(f"#{tries} - Not sorted: {list}. Shuffling and trying again.")
-            random.shuffle(list)
+            if initial:
+                print(f"Shuffling...")
+                initial = False
+            else:
+                print(
+                    f"Attempt #{tries} - Not sorted: {list}. Shuffling and trying again.")
             tries += 1
+            random.shuffle(list)
         else:
-            print(f"Sorted correctly: {list} after {tries} shuffles.")
+            if initial:
+                print(f"Sorted correctly: {list} without shuffling.")
+            else:
+                print(f"Sorted correctly: {list} after {tries} shuffles.")
 
 
 def main() -> None:
