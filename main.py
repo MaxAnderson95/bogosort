@@ -10,7 +10,7 @@ def is_sorted(list: list[int]) -> bool:
     return is_sorted
 
 
-def main(list: list[int]) -> None:
+def sort(list: list[int]) -> None:
     sorted = False
     tries = 1
     while sorted != True:
@@ -23,5 +23,10 @@ def main(list: list[int]) -> None:
             print(f"Sorted correctly: {list} after {tries} shuffles.")
 
 
+def main() -> None:
+    list = [14, 5, 22, 3, 7, 9, 33]
+    sort(list)
+
+
 if __name__ == "__main__":
-    main([14, 5, 22, 3, 7, 9, 33])
+    main()
