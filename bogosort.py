@@ -10,7 +10,7 @@ def is_sorted(list: list[int]) -> bool:
     return is_sorted
 
 
-def sort(list: list[int]) -> None:
+def bogosort(list: list[int]) -> None:
     initial = True
     sorted = False
     tries = 0
@@ -29,13 +29,5 @@ def sort(list: list[int]) -> None:
             if initial:
                 print(f"Sorted correctly: {list} without shuffling.")
             else:
-                print(f"Sorted correctly: {list} after {tries} shuffles.")
-
-
-def main() -> None:
-    list = [14, 5, 22, 3, 7, 9, 33]
-    sort(list)
-
-
-if __name__ == "__main__":
-    main()
+                print(
+                    f"Sorted correctly: {list} after {'{:,}'.format(tries)} shuffles.")
